@@ -1,0 +1,22 @@
+server {
+  server_name rxr.whitequark.org;
+  include common_params;
+  ssl_certificate /etc/letsencrypt/live/rxr.whitequark.org/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/rxr.whitequark.org/privkey.pem;
+
+  root /var/www/rxr.whitequark.org/lxr/wwwroot;
+  index /mri/source;
+
+  rewrite ^/$ /mri;
+  rewrite ^/([a-z]+)/?$ /$1/source permanent;
+
+  location ~ ^/([a-z]+)/(search|source|ident|diff)/?(.*)$ {
+    gzip off;
+    fastcgi_pass  unix:/tmp/rxr.sock;
+    fastcgi_param SCRIPT_FILENAME /var/www/rxr.whitequark.org/lxr/$2;
+    fastcgi_intercept_errors on;
+    include fastcgi_params;
+    fastcgi_param PATH_INFO $3;
+    fastcgi_param RXR_TREE $1;
+  }
+}

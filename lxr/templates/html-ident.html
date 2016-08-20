@@ -1,0 +1,36 @@
+<h1>Identifier Search</h1>
+
+<p>
+  Type the full name of an identifier to summarize 
+  (a function name, variable name, typedef, etc).<br>
+  Matches are case-sensitive.
+</p>
+
+<form method="get" action="ident">
+  $variables
+
+  <label for="i">Identifier:</label>
+    <input type="text" id="i" name="i" value="$identifier_escaped">
+
+  <input type="submit" value="Find">
+</form>
+
+<hr>
+
+<h2>$identifier</h2>
+
+<h3>Declarations</h3>
+
+<table class="results">
+  $refs{<tr>
+    <td class="location">$fileref</td><td>$type</td><td>$rel</td>
+  </tr>}
+</table>
+
+<h3>References</h3>
+
+<table class="results">
+  $uses{<tr>
+    <td class="location">$fileref</td>
+  </tr>}
+</table>

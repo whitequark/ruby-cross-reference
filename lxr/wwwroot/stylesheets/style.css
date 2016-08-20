@@ -1,0 +1,217 @@
+body {
+  background-color: black;
+
+  font-family: sans;
+}
+
+h1 {
+  font-size: 25pt;
+}
+
+h2 {
+  font-size: 18pt;
+  padding-left: 10pt;
+}
+
+h3 {
+  padding-left: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+a:hover {
+  border-bottom: 2px solid;
+}
+
+p, form {
+  padding-left: 10px;
+}
+
+#wrapper {
+  width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+
+  background-color: white;
+
+  overflow: hidden;
+}
+
+#wrapper.diff {
+  width: 1200px;
+}
+
+.push {
+  clear: both;
+}
+
+/* Header styling */
+
+header {
+  height: 110px;
+  background-color: #cc3333;
+}
+
+header h1 {
+  font-size: 30pt;
+}
+
+header small {
+  color: white;
+  margin-left: 40px;
+}
+
+header nav {
+  float: right;
+  padding-right: 20px;
+}
+
+header nav li {
+  list-style-type: none;
+  display: block;
+  padding-bottom: 2px;
+  text-align: right;
+}
+
+header nav .modes-sel {
+  color: white;
+  font-weight: bold;
+}
+
+header nav .modes {
+  color: #eeeeee;
+}
+
+header h1 {
+  padding: 30px 0 0 25px;
+  margin: 0;
+}
+
+header h1 a {
+  color: white;
+  border: none;
+}
+
+/* Variables */
+
+#variables {
+  margin-top: 1px;
+  padding: 5px;
+
+  background-color: gray;
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+#variables a {
+  color: #dddddd;
+}
+
+/* Banner */
+
+#banner {
+  margin-left: 1em;
+  color: gray;
+}
+
+#banner a {
+  color: black;
+}
+
+/* Directory */
+
+.directory {
+  margin-left: 10px;
+  font-size: 10pt;
+}
+
+.directory .icon a {
+  border: none;
+}
+
+.directory .name {
+  min-width: 200px;
+}
+
+.directory .size {
+  color: gray;
+}
+
+/* Source */
+
+.file {
+  overflow-x: auto;
+}
+
+.file a.line {
+  border: 0;
+  background-color: #dedede;
+  color: gray;
+}
+
+.file .include {
+  color: #e65c00;
+}
+
+.file .ident {
+  color: #007acc;
+}
+
+.file .comment {
+  color: gray;
+}
+
+.file .string {
+  color: #bb0000;
+}
+
+.file .reserved {
+  color: green;
+  font-weight: bold;
+}
+
+/* Search */
+
+.results {
+  padding-left: 30px;
+}
+
+.results .code {
+  font-family: monospace;
+}
+
+/* Diff */
+
+.diff-mark {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+  margin: -10px;
+  padding: 10px;
+  margin-top: 15px;
+
+  background-color: #dddddd;
+}
+
+footer .buttons {
+  display: block;
+  float: right;
+}
+
+footer .buttons a {
+  border: 0;
+  display: block;
+}

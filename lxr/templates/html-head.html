@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>$title</title>
+  <meta charset="$encoding">
+  <link href="$stylesheet" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="description" content="Ruby Cross Reference, a hypertext guide to Ruby MRI source code.">
+</head>
+
+<body>
+
+<div id="wrapper" class="$isdiff">
+
+<div style="border: 5px solid red; background: white; color:red; padding:20px; font-size: 16pt; margin-bottom: 1em;">
+Due to lack of interest and maintenance burden, Ruby Cross Reference will be shut down
+at 2016-12-31 after five years of operation. Contact <a href="mailto:whitequark@whitequark.org">whitequark</a>
+if you are interested in taking over.
+</div>
+
+<header>
+  <nav>
+    <ul>
+      $modes{
+      <li>$modelink</li>}
+    </ul>
+  </nav>
+  <h1><a href="/">The Ruby Cross Reference</a></h1>
+  <div class="push"></div>
+</header>
+
+<div id="variables">
+  <span class="variable">Implementation:</span>
+    $impllinks{$impl }
+  <br/>
+
+  $variables{
+  <span class="variable">$varname:</span>
+    $varlinks{$varvalue }
+  <br/>
+  }
+</div>
+
+<h2 id="banner">$banner</h2>

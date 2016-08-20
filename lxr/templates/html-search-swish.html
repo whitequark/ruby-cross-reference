@@ -1,0 +1,61 @@
+<h1>Full-text search</h1>
+
+<form method="get" action="search">
+    $variables{<input type="hidden" name="$variable" value="$value">}
+
+	<table border="0">
+		<tr>
+			<td>
+				<label for="filestring">Files named:</label>
+			</td>
+			<td>
+				<input type="text" id="filestring" name="filestring" value="$filetext_escaped" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="checkbox" id="advanced" name="advanced" $advancedchecked value="1">
+					<label for="advanced">Advanced
+					(<a href="http://www.perldoc.com/perl5.8.4/pod/perlrequick.html" target="_blank">perl regexps</a>
+					are allowed)</label><br>
+				<input type="checkbox" id="casesensitive" name="casesensitive" $casesensitivechecked value="1">
+					<label for="casesensitive">Case-sensitive</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="text">Containing:</label>
+			</td>
+			<td>
+				<input type="text" id="string" name="string" value="$searchtext_escaped" size="50">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			    Supported operators: AND, OR, NOT, ( ) boolean grouping, trailing *, " " phrase grouping<br>
+			    Example: (book* OR magazine*) NOT "my magazine"<br>
+			    Powered by <a href="http://swish-e.org" target="_blank">Swish-E</a>
+			    (<a href="http://swish-e.org/current/docs/SWISH-SEARCH.html" target="_blank">syntax documentation</a>).
+			</td>
+		</tr>
+	</table>
+
+    <input type="submit" value="Search">
+</form>
+
+<hr>
+
+<h2>$searchtext</h2>
+
+<p>
+  $maxhits_message
+  $resultcount files found.
+</p>
+
+<table class="results">
+  $results{<tr>
+    <td>$text</td><td>$fileref</td>
+  </tr>}
+</table>
